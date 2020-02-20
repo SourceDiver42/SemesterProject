@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CakeBehaviour : MonoBehaviour
 {
+    public Material opaqueMaterial;
     public GameObject Cake;
     public Text TheCakeIsALie;
     // Start is called before the first frame update
@@ -16,7 +17,7 @@ public class CakeBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Cake.GetComponent<Renderer>().material = opaqueMaterial;
     }
 
     void OnTriggerEnter(Collider other){

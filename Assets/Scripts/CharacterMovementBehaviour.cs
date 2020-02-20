@@ -40,7 +40,7 @@ public class CharacterMovementBehaviour : MonoBehaviour
         sensitivity = PlayerPrefs.GetFloat("Sensitivity"); //In case the Player changed it in the Settings
         acceleration = 0.25f;
         horizontalTurn = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
-        jump = (Input.GetAxis("Jump") > 0);
+        jump = Input.GetAxis("Jump") > 0;
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 

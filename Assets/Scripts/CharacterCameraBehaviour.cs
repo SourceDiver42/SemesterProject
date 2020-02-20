@@ -28,7 +28,7 @@ public class CharacterCameraBehaviour : MonoBehaviour
     {
         ray = new Ray(transform.position, Vector3.forward);
         if (Physics.Raycast(ray, out raycastHit, 100)){
-            Debug.DrawLine(ray.origin,raycastHit.point, Color.red, 100f);
+            Debug.DrawLine(ray.origin,raycastHit.point, Color.green, 100f);
         }
 
         if (PlayerPrefs.GetInt("InVertical", 1) == 1){
@@ -43,7 +43,7 @@ public class CharacterCameraBehaviour : MonoBehaviour
         CameraTransform.transform.localEulerAngles = new Vector3(-verticalTurn, transform.localEulerAngles.y,transform.localEulerAngles.z);
         
         //transform.Rotate(verticalTurn, 0, 0);
-        Debug.Log(transform.rotation.y);
+        //Debug.Log(transform.rotation.y);
         
     }
 

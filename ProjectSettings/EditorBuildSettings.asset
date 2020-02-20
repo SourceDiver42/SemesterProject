@@ -12,10 +12,10 @@ EditorBuildSettings:
     path: Assets/Sandbox.unity
     guid: ee00b1df20997d44ea2b89b91def32c8
   - enabled: 1
-    path: Assets/Levels/IntroLevel.unity
+    path: Assets/Scenes/IntroLevel.unity
     guid: 0b7beab6bdf61fa44ac254279cbd7d91
   - enabled: 1
-    path: Assets/Levels/MainMenu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 60b2a8fd2df389b459a18d179fdfd6da
   - enabled: 1
     path: Assets/Levels/PauseMenu.unity

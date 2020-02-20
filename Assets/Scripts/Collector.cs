@@ -9,7 +9,8 @@ public class Collector : MonoBehaviour
     
     public int collectedItems;
     public Text collectedItems_Text;
-    private ArrayList collectedArr;
+    private string testString;
+    private ArrayList collectedArr = new ArrayList();
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +28,9 @@ public class Collector : MonoBehaviour
                 }
             }
         }
+        
         collectedItems_Text.text = collectedArr.Count.ToString();
-
+        //Debug.Log(collectedItems_Text.text);
 
     }
 }
