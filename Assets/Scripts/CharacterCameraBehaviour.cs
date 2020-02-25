@@ -20,7 +20,7 @@ public class CharacterCameraBehaviour : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
-        //raycastHit = Physics.Raycast();
+        
     }
 
     // Update is called once per frame
@@ -31,15 +31,15 @@ public class CharacterCameraBehaviour : MonoBehaviour
             Debug.DrawLine(ray.origin,raycastHit.point, Color.green, 100f);
         }
 
-        if (PlayerPrefs.GetInt("InVertical", 1) == 1){
-            invertVertical = -1;
-        } else {
+        if (PlayerPrefs.GetInt("InVertical", 0) == 1){
             invertVertical = 1;
+        } else {
+            invertVertical = -1;
         }
 
         verticalTurn += Input.GetAxis("Mouse Y") * sensitivity*Time.deltaTime * invertVertical; //mouselook.cs
         verticalTurn = Mathf.Clamp(verticalTurn, -90,90);
-
+        
         CameraTransform.transform.localEulerAngles = new Vector3(-verticalTurn, transform.localEulerAngles.y,transform.localEulerAngles.z);
         
         //transform.Rotate(verticalTurn, 0, 0);
@@ -47,8 +47,5 @@ public class CharacterCameraBehaviour : MonoBehaviour
         
     }
 
-    void shakingEffect() {
-        //Camera.main.transform.Translate()
-
-    }
+    
 }

@@ -29,7 +29,8 @@ public class CharacterMovementBehaviour : MonoBehaviour
 
     void Start()
     {
-        sensitivity = PlayerPrefs.GetFloat("Sensitivity");
+        //sensitivity = PlayerPrefs.GetFloat("Sensitivity", sensitivity);
+        PlayerPrefs.SetFloat("Sensitivity", sensitivity);
         
     }
 
@@ -37,8 +38,8 @@ public class CharacterMovementBehaviour : MonoBehaviour
     void Update()
     {
 
-        sensitivity = PlayerPrefs.GetFloat("Sensitivity"); //In case the Player changed it in the Settings
-        acceleration = 0.25f;
+        sensitivity = PlayerPrefs.GetFloat("Sensitivity", sensitivity); //In case the Player changed it in the Settings
+        //acceleration = 0.25f;
         horizontalTurn = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
         jump = Input.GetAxis("Jump") > 0;
         horizontal = Input.GetAxis("Horizontal");
@@ -48,11 +49,15 @@ public class CharacterMovementBehaviour : MonoBehaviour
 
             acceleration += 1.5f;
 
+        } else {
+
+            acceleration = 0.75f;
+
         }
 
         Vector3 destination = new Vector3(horizontal, 0f, vertical) * acceleration;
         
-        //Debug.Log(destination);
+        
         
         transform.Translate(destination, Space.Self);
         transform.Rotate(0, horizontalTurn, 0, Space.World);

@@ -6,8 +6,9 @@ public class GameManager : MonoBehaviour
 {
     private bool isMenuCameraActive = false;
     public Camera MainCamera;
-    public Camera MenuCamera;
+    //public Camera MenuCamera;
     public float FOV;
+    public bool DEBUG;
 
     void Start()
     {
@@ -17,7 +18,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         MainCamera.enabled = true;
-        MenuCamera.enabled = false;
+        //MenuCamera.enabled = false;
         setDebugPlayerPrefs();
     }
 
@@ -47,7 +48,8 @@ public class GameManager : MonoBehaviour
     }
 
    void setDebugPlayerPrefs(){
-       PlayerPrefs.SetFloat("Sensitivity", 50f);
+       PlayerPrefs.SetInt("InVertical", 0);
+       PlayerPrefs.SetFloat("Sensitivity", 150f);
        PlayerPrefs.SetInt("EXISTS", 1);
        PlayerPrefs.SetFloat("HighScore",10000);
    }

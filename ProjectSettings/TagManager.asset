@@ -8,6 +8,7 @@ TagManager:
   - Entity
   - InteractiveStaticComponent
   - Door
+  - VariableTransparency
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - VariableTransparency
   - 
   - 
   - 
