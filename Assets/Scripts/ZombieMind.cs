@@ -5,8 +5,10 @@ using UnityEngine.AI;
 
 public class ZombieMind : MonoBehaviour
 {
+    public float moveSpeed;
+    public float locateSpeed;
     public GameObject Radio;
-    public GameObject player;
+    public GameObject Player;
     private NavMeshAgent agent;
     private bool playerIsInRange;
     private bool radioIsInRange;
@@ -15,6 +17,7 @@ public class ZombieMind : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        locateSpeed = moveSpeed / 1.5f;
         playerIsInRange = false;
         agent = GetComponent<NavMeshAgent>();
     }
@@ -27,8 +30,20 @@ public class ZombieMind : MonoBehaviour
         }
 
         else if (playerIsInRange){
-            agent.SetDestination(player.transform.position);
-        } //Could have made a class instead of messing with bools but what gives...
+            agent.SetDestination(Player.transform.position);
+        }
+        
+        else if (!playerIsInRange) {
+            SphereCollider sc = Player.GetComponent<SphereCollider>();
+            Vector3 scpos = sc.ClosestPoint(this.transform.position);
+            agent.SetDestination(scpos);
+            agent.speed = locateSpeed;
+        }
+        
+        
+        //Could have made a class instead of messing with bools but what gives...
+
+
     }
 
     private void OnTriggerEnter(Collider other)
