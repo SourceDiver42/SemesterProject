@@ -5,13 +5,15 @@ using UnityEngine.UI;
 
 public class ReadyNotifications : MonoBehaviour
 {
-
+    
     public Text FlareText;
     public Text RadioText;
-
+    public GameObject Radio;
+    public GameObject Flare;
     private float FlareDelay = 20f;
-    private float RadioDelay = 30f;
-
+    private float RadioDelay = 10f;
+    private bool radioExistsState = false;
+    private bool flareExistsState = false;
     private bool flareReadyState = true;
     private bool radioReadyState = true;
     
@@ -27,6 +29,9 @@ public class ReadyNotifications : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!Flare.activeSelf)  { flareReadyState = false;
+            }
+            Debug.Log(flareReadyState);
         if (flareReadyState == false) {
             if (FlareDelay > 0f) {
                 FlareDelay -= Time.deltaTime;
@@ -39,6 +44,7 @@ public class ReadyNotifications : MonoBehaviour
         if (flareReadyState) {
             FlareText.text = "Ready";
         }
+        if (!Radio.activeSelf)   radioReadyState = false;
 
         if (radioReadyState == false) {
             if (RadioDelay > 0f) {

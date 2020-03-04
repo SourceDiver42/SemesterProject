@@ -20,11 +20,13 @@ public class ZombieMind : MonoBehaviour
         locateSpeed = moveSpeed / 1.5f;
         playerIsInRange = false;
         agent = GetComponent<NavMeshAgent>();
+        agent.speed = moveSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (Radio.activeSelf){
             agent.SetDestination(Radio.transform.position);
         }

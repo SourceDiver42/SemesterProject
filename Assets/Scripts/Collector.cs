@@ -29,8 +29,7 @@ public class Collector : MonoBehaviour
             }
         }
         
-        collectedItems_Text.text = collectedArr.Count.ToString();
-        //Debug.Log(collectedItems_Text.text);
-
+        collectedItems_Text.text = "Collected: " + collectedArr.Count.ToString() + "/7";
+        
     }
 }
