@@ -11,7 +11,8 @@ public class Radio : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeuntilDestroy = 5f;
+        Text = GameObject.Find("RadioReady").GetComponent<Text>();
+        timeuntilDestroy = 5f; //remove to use public variable
     }
 
     // Update is called once per frame
@@ -19,9 +20,11 @@ public class Radio : MonoBehaviour
     {
 
         timeuntilDestroy -= Time.deltaTime;
-        Text.text = timeuntilDestroy.ToString();
+        
+        Text.text = timeuntilDestroy.ToString().Substring(0, 3);
         if (timeuntilDestroy < 0) {
             Text.text = "0";
+            Text.text = "Ready";
             this.gameObject.SetActive(false);
         }
     }

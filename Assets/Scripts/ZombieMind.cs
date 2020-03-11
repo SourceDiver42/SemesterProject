@@ -9,6 +9,7 @@ public class ZombieMind : MonoBehaviour
     public float locateSpeed;
     public GameObject Radio;
     public GameObject Player;
+    private GameObject Flare;
     private NavMeshAgent agent;
     private bool playerIsInRange;
     private bool radioIsInRange;
@@ -21,6 +22,7 @@ public class ZombieMind : MonoBehaviour
         playerIsInRange = false;
         agent = GetComponent<NavMeshAgent>();
         agent.speed = moveSpeed;
+        Flare = GameObject.Find("Flare") ?? null;
     }
 
     // Update is called once per frame
@@ -29,6 +31,12 @@ public class ZombieMind : MonoBehaviour
         
         if (Radio.activeSelf){
             agent.SetDestination(Radio.transform.position);
+            if (radioIsInRange) Debug.Log("Radio is in range");
+        }
+
+        else if (flareIsInRange) {
+            agent.SetDestination(Flare.transform.position);
+            if (flareIsInRange) Debug.Log("Flare is in range");
         }
 
         else if (playerIsInRange){

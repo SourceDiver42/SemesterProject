@@ -34,9 +34,7 @@ public class CharacterMovementBehaviour : MonoBehaviour
         
     }
 
-    
-
-    
+      
     void Update()
     {
 

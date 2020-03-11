@@ -22,9 +22,11 @@ public class CakeBehaviour : MonoBehaviour
 
     void OnTriggerEnter(Collider other){
         if (other.tag =="Player") {
-            Cake.SetActive(false);
+            TheCakeIsALie.text = "The Cake Is A Lie";
             TheCakeIsALie.enabled = true;
             Invoke("DisableText", 2f);      //Method Invoke https://stackoverflow.com/a/32322522
+            Cake.SetActive(false);
+            
         }
     }
     void DisableText() {

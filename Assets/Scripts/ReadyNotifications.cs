@@ -29,13 +29,13 @@ public class ReadyNotifications : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Flare.activeSelf)  { flareReadyState = false;
-            }
+        if (GameObject.Find("Flare") != null)   flareReadyState = false;
+            
             Debug.Log(flareReadyState);
         if (flareReadyState == false) {
             if (FlareDelay > 0f) {
                 FlareDelay -= Time.deltaTime;
-                FlareText.text = FlareDelay.ToString();
+                FlareText.text = FlareDelay.ToString().Substring(0, 3);
                 if (FlareDelay < 0) {
                     flareReadyState = true;
                 }
@@ -44,12 +44,14 @@ public class ReadyNotifications : MonoBehaviour
         if (flareReadyState) {
             FlareText.text = "Ready";
         }
+
+
         if (!Radio.activeSelf)   radioReadyState = false;
 
         if (radioReadyState == false) {
             if (RadioDelay > 0f) {
                 RadioDelay -= Time.deltaTime;
-                RadioText.text = RadioDelay.ToString();
+                RadioText.text = RadioDelay.ToString().Substring(0, 3);
                 if (RadioDelay < 0) {
                     radioReadyState = true;
                 }

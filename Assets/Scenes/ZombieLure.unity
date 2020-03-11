@@ -513,6 +513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df21c2fa94f11fa47af1788ad7336e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 0}
   Collectibles: []
 --- !u!114 &66223267
 MonoBehaviour:
@@ -654,7 +655,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 230327036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75ed1a4da2135c540a2472ab922f23e8, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!81 &230327038
@@ -734,7 +735,7 @@ Transform:
   m_GameObject: {fileID: 230327036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -34, y: 2.62, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6098, y: 1.6098, z: 1.6098}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
@@ -1454,7 +1455,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -96.100006, y: -52}
+  m_AnchoredPosition: {x: -96.100006, y: -24.3}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &481647760
@@ -1477,10 +1478,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 11
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -12855,6 +12856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df21c2fa94f11fa47af1788ad7336e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 1495772594}
   Collectibles: []
 --- !u!1 &1453234284
 GameObject:
@@ -17723,7 +17725,7 @@ GameObject:
   - component: {fileID: 1495772595}
   - component: {fileID: 1495772594}
   m_Layer: 5
-  m_Name: TheCakeIsALie
+  m_Name: Announcer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

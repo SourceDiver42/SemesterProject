@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
-    private bool isMenuCameraActive = false;
+    //private bool isMenuCameraActive = false;
     public Camera MainCamera;
+    private Camera MenuCamera;
     //public Camera MenuCamera;
     public float FOV;
     public bool DEBUG;
@@ -14,7 +15,7 @@ public class GameManager : MonoBehaviour
     {
         FOV = Camera.main.fieldOfView;
         //SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
-
+        MenuCamera = GameObject.Find("MenuCamera").GetComponent<Camera>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         MainCamera.enabled = true;
@@ -24,9 +25,13 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log(Time.timeScale);
-        //Debug.Log(SceneManager.GetActiveScene().name);
-        /*if (Input.GetKeyDown(KeyCode.Escape)) {
+        //pauseChecker();
+    }
+
+    void pauseChecker() {
+        Debug.Log(Time.timeScale);
+        Debug.Log(SceneManager.GetActiveScene().name);
+        if (Input.GetKeyDown(KeyCode.Escape)) {
             if (Time.timeScale == 1) {
                 Time.timeScale = 0;
                 Time.fixedDeltaTime = 0;
@@ -44,9 +49,8 @@ public class GameManager : MonoBehaviour
                 MenuCamera.enabled = false;
                 
             }
-        }*/
+        }
     }
-
    void setDebugPlayerPrefs(){
        PlayerPrefs.SetInt("InVertical", 0);
        PlayerPrefs.SetFloat("Sensitivity", 150f);
